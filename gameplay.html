@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gameplay</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="title" id="game-title">Developer Hangman</div>
+        <div id="question-container">
+            <p id="question"></p>
+            <p id="obscured-word"></p>
+            <p id="attempts"></p>
+        </div>
+        <input type="text" id="guess-input" maxlength="1">
+        <button id="guess-button">Guess</button>
+        <p id="message"></p>
+    </div>
+
+    <script src="game.js"></script>
+    <script>
+        // Function to get query parameters from the URL
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const regex = /([^&=]+)=([^&]*)/g;
+            let m;
+            while (m = regex.exec(queryString)) {
+                params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+            }
+            return params;
+        }
+
+        // Get the language from the URL
+        const params = getQueryParams();
+        const language = params.file ? params.file.split('.')[0] : '';
+
+        // Set the title based on the selected language
+        const titleElement = document.getElementById('game-title');
+        titleElement.textContent = `Let's start your ${language.charAt(0).toUpperCase() + language.slice(1)} quiz`;
+    </script>
+</body>
+</html>
