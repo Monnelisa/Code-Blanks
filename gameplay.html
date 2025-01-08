@@ -37,7 +37,7 @@
 
         // Get the language from the URL
         const params = getQueryParams();
-        const language = params.file ? params.file.split('.')[0] : '';
+        const language = params.file ? params.file.split('/').pop().split('.')[0]: '';
 
         // Set the title based on the selected language
         const titleElement = document.getElementById('game-title');
