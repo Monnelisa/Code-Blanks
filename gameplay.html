@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gameplay</title>
+    <title>Developer Hangman</title>
+    <link rel="icon" href="images/icon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
         <div class="title" id="game-title">Developer Hangman</div>
-        <div id="hangman-figure"></div>
         <div id="question-container">
             <p id="question"></p>
+            <p id="guess-prompt">Guess the word:</p>
             <p id="obscured-word"></p>
             <p id="attempts"></p>
         </div>
-        <input type="text" id="guess-input" maxlength="1">
-        <button id="guess-button">Guess</button>
+        
+        <div class="input-group">
+            <input type="text" id="guess-input" maxlength="1" placeholder="Enter your guess">
+            <button id="guess-button">Submit</button>
+        </div>
+
         <p id="message"></p>
     </div>
 
     <script src="game.js"></script>
     <script>
-        // Function to get query parameters from the URL
         function getQueryParams() {
             const params = {};
             const queryString = window.location.search.substring(1);
@@ -35,11 +39,8 @@
             return params;
         }
 
-        // Get the language from the URL
         const params = getQueryParams();
         const language = params.file ? params.file.split('/').pop().split('.')[0]: '';
-
-        // Set the title based on the selected language
         const titleElement = document.getElementById('game-title');
         titleElement.textContent = `Let's start your ${language.charAt(0).toUpperCase() + language.slice(1)} quiz`;
     </script>

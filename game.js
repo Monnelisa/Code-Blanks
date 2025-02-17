@@ -6,8 +6,8 @@ let attempts = 0;
 function getQueryParams() {
     const params = new URLSearchParams(window.location.search);
     return {
-        file: params.get('file') || 'python.json',  // Default to 'python.json' if no file param is provided
-        difficulty: params.get('difficulty') || 'easy' // Default to 'easy' if no difficulty param is provided
+        file: params.get('file') || 'python.json',  
+        difficulty: params.get('difficulty') || 'easy' 
     };
 }
 
@@ -31,41 +31,39 @@ function filterQuestionsByDifficulty(questions, difficulty) {
 
 function selectRandomQuestion() {
     const randomIndex = Math.floor(Math.random() * questions.length);
-    return questions.splice(randomIndex, 1)[0]; // Remove and return the question
+    return questions.splice(randomIndex, 1)[0]; 
 }
 
 function selectRandomLettersFrom(word) {
     const wordLength = word.length;
-    let numMissing;
-    if (wordLength <= 3) {
-        numMissing = 1;
-    } else if (wordLength > 6) {
-        numMissing = 3;
-    } else {
-        numMissing = 2;
+    let numMissing = wordLength <= 3 ? 1 : wordLength > 6 ? 3 : 2;
+
+    revealedIndices.clear(); // Ensure a fresh set per word
+    while (revealedIndices.size < numMissing) {
+        revealedIndices.add(Math.floor(Math.random() * wordLength));
     }
 
-    const lettersIndices = [];
-    while (lettersIndices.length < numMissing) {
-        const randomIndex = Math.floor(Math.random() * wordLength);
-        if (!lettersIndices.includes(randomIndex)) {
-            lettersIndices.push(randomIndex);
-        }
-    }
-
-    revealedIndices = new Set(lettersIndices);
     updateObscuredWord(word);
 }
 
 function updateObscuredWord(word) {
-    const obscuredWord = word.split('').map((letter, index) => revealedIndices.has(index) ? '_' : letter).join('');
-    document.getElementById('obscured-word').innerText = `Guess the word: ${obscuredWord}`;
+    const obscuredWordContainer = document.getElementById('obscured-word');
+    obscuredWordContainer.innerHTML = ''; // Clear previous content
+
+    word.split('').forEach((letter, index) => {
+        const letterBlock = document.createElement('span');
+        letterBlock.classList.add('letter-block');
+        letterBlock.innerText = revealedIndices.has(index) ? letter : '_';
+        obscuredWordContainer.appendChild(letterBlock);
+    });
 }
 
 function showAnswer(word) {
-    const currentWord = word.split('').map((letter, index) => revealedIndices.has(index) ? letter : '_').join('');
-    document.getElementById('obscured-word').innerText = `Current word: ${currentWord}`;
-    return !currentWord.includes('_'); // True if fully revealed
+    const currentWord = word.split('').map((letter, index) => 
+        revealedIndices.has(index) ? letter : '_'
+    ).join('');
+
+    return !currentWord.includes('_'); // True if all letters are revealed
 }
 
 function handleGuess() {
@@ -78,34 +76,36 @@ function handleGuess() {
     }
 
     const answer = currentQuestion.answer.toLowerCase();
-    let correctGuess = false; // Track if the guess was correct
+    let correctGuess = false;
 
-    if (answer.includes(userInput)) {
-        for (let i = 0; i < answer.length; i++) {
-            if (answer[i] === userInput) {
-                revealedIndices.add(i); // Add the index of the correct letter
-                correctGuess = true; // Mark that we had a correct guess
-            }
+    for (let i = 0; i < answer.length; i++) {
+        if (answer[i] === userInput) {
+            revealedIndices.add(i); // Persist correct guesses
+            correctGuess = true;
         }
+    }
+
+    if (correctGuess) {
         document.getElementById('message').innerText = `Correct! '${userInput}' is in the word.`;
-        updateObscuredWord(answer); // Update the displayed word
     } else {
         attempts--;
         document.getElementById('message').innerText = `'${userInput}' is not in the word. Remaining attempts: ${attempts}`;
     }
 
+    updateObscuredWord(answer);
+
     if (showAnswer(answer)) {
-        document.getElementById('message').innerText = 'Well done! You guessed the word!';
-        setTimeout(startGame, 2000); // Start the next question after a delay
+        document.getElementById('message').innerText = '🎉 Well done! You guessed the word!';
+        setTimeout(() => startGame(), 2000); 
     } else if (attempts <= 0) {
-        document.getElementById('message').innerText = `Out of attempts! The correct word was: ${answer}`;
-        setTimeout(startGame, 2000); // Start the next question after a delay
+        document.getElementById('message').innerText = `❌ Out of attempts! The correct word was: ${answer}`;
+        setTimeout(() => startGame(), 2000);
     }
 }
 
 function startGame() {
     if (questions.length === 0) {
-        document.getElementById('message').innerText = 'Game Over!';
+        document.getElementById('message').innerText = '🎮 Game Over! No more questions left.';
         return;
     }
 
@@ -113,10 +113,12 @@ function startGame() {
     document.getElementById('question').innerText = currentQuestion.question;
     revealedIndices.clear();
     selectRandomLettersFrom(currentQuestion.answer.toLowerCase());
-    attempts = revealedIndices.size + 2;
+    attempts = revealedIndices.size + 1;
     document.getElementById('attempts').innerText = `Remaining attempts: ${attempts}`;
     document.getElementById('message').innerText = '';
 }
+
+
 
 document.getElementById('guess-button').addEventListener('click', handleGuess);
 window.onload = loadGameData;
