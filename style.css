@@ -119,3 +119,27 @@ label {
     border-radius: 5px;
 }
 
+#restart-btn, #home-btn {
+    width: 90%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+#restart-btn {
+    background: linear-gradient(to right, #ff416c, #ff2bf4);
+}
+
+#home-btn {
+    background: linear-gradient(to right, #36d1dc, #5b86e5);
+}
+
+#restart-btn:hover, #home-btn:hover {
+    transform: scale(1.05);
+}

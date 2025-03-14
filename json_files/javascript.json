@@ -25,18 +25,8 @@
       "difficulty": "easy"
     },
     {
-      "question": "What is the method used to convert an object to a string in Ruby?",
-      "answer": "to_s",
-      "difficulty": "easy"
-    },
-    {
       "question": "Which keyword is used to include a module in a class in Ruby?",
       "answer": "include",
-      "difficulty": "easy"
-    },
-    {
-      "question": "Which symbol is used to denote an instance variable in Ruby?",
-      "answer": "@",
       "difficulty": "easy"
     },
     {
@@ -122,11 +112,6 @@
     {
       "question": "Which method is used to delete a key-value pair from a hash in Ruby?",
       "answer": "delete",
-      "difficulty": "hard"
-    },
-    {
-      "question": "What method is used to check if a key exists in a hash in Ruby?",
-      "answer": "has_key?",
       "difficulty": "hard"
     },
     {

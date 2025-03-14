@@ -2,9 +2,16 @@ let questions = [];
 let currentQuestion = null;
 let revealedIndices = new Set();
 let attempts = 0;
+let correctAnswers = 0;
+let totalQuestions = 0;
+let difficultyLevels = ["easy", "medium", "hard"];
+let currentLevelIndex = 0;
+
 
 function getQueryParams() {
     const params = new URLSearchParams(window.location.search);
+    currentLevelIndex = difficultyLevels.indexOf(difficulty);
+    
     return {
         file: params.get('file') || 'python.json',  
         difficulty: params.get('difficulty') || 'easy' 
@@ -95,6 +102,7 @@ function handleGuess() {
     updateObscuredWord(answer);
 
     if (showAnswer(answer)) {
+        correctAnswers++;
         document.getElementById('message').innerText = '🎉 Well done! You guessed the word!';
         setTimeout(() => startGame(), 2000); 
     } else if (attempts <= 0) {
@@ -105,20 +113,23 @@ function handleGuess() {
 
 function startGame() {
     if (questions.length === 0) {
-        document.getElementById('message').innerText = '🎮 Game Over! No more questions left.';
+        window.location.href = `end.html?correct=${correctAnswers}&total=${totalQuestions}`;
         return;
     }
 
     currentQuestion = selectRandomQuestion();
+    totalQuestions++; 
+
     document.getElementById('question').innerText = currentQuestion.question;
     revealedIndices.clear();
     selectRandomLettersFrom(currentQuestion.answer.toLowerCase());
     attempts = revealedIndices.size + 1;
     document.getElementById('attempts').innerText = `Remaining attempts: ${attempts}`;
     document.getElementById('message').innerText = '';
+
+    totalQuestions++;
+
 }
-
-
 
 document.getElementById('guess-button').addEventListener('click', handleGuess);
 window.onload = loadGameData;

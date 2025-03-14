@@ -5,11 +5,6 @@
       "difficulty": "easy"
     },
     {
-      "question": "Which HTML element is used to create a paragraph?",
-      "answer": "p",
-      "difficulty": "easy"
-    },
-    {
       "question": "Which HTML element is used to display a heading level 1?",
       "answer": "h1",
       "difficulty": "easy"
@@ -17,11 +12,6 @@
     {
       "question": "Which HTML attribute is used to specify the URL of an image?",
       "answer": "src",
-      "difficulty": "easy"
-    },
-    {
-      "question": "Which HTML element is used to create a hyperlink?",
-      "answer": "a",
       "difficulty": "easy"
     },
     {
@@ -147,12 +137,17 @@
     {
       "question": "Which HTML element is used to create a footer for a section?",
       "answer": "footer",
-      "difficulty": "hard"
+      "difficulty": "easy"
     },
     {
       "question": "Which HTML element is used to create a navigation menu?",
       "answer": "nav",
-      "difficulty": "hard"
+      "difficulty": "easy"
+    },
+    {
+      "question": "Which HTML element is used to group related form elements?",
+      "answer": "fieldset",
+      "difficulty": "easy"
     }
   ]
   
