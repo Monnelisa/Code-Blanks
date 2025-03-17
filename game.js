@@ -113,7 +113,7 @@ function handleGuess() {
 
 function startGame() {
     if (questions.length === 0) {
-        window.location.href = `end.html?correct=${correctAnswers}&total=${totalQuestions}`;
+        window.location.href = `end.html?correctAnswers=${correctAnswers}&totalQuestions=${totalQuestions}&difficulty=${difficultyLevels[currentLevelIndex]}&file=${getQueryParams().file}`;
         return;
     }
 
@@ -127,7 +127,6 @@ function startGame() {
     document.getElementById('attempts').innerText = `Remaining attempts: ${attempts}`;
     document.getElementById('message').innerText = '';
 
-    totalQuestions++;
 
 }
 

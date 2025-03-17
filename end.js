@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
-    const correct = parseInt(params.get('correct')) || 0;
-    const total = parseInt(params.get('total')) || 0;
+    const correct = parseInt(params.get('correctAnswers')) || 0;
+    const total = 10;     
     const currentDifficulty = params.get('difficulty') || "easy";
     const scorePercentage = (correct / total) * 100;
 
@@ -14,36 +14,47 @@ document.addEventListener("DOMContentLoaded", () => {
     // Determine the next difficulty
     const difficulties = ["easy", "medium", "hard"];
     const currentIndex = difficulties.indexOf(currentDifficulty);
-    const nextDifficulty = currentIndex < 2 ? difficulties[currentIndex + 1] : null;
 
+    // Ensure progression to the next level
+    let nextDifficulty = null;
+    if (currentIndex !== -1 && currentIndex < difficulties.length - 1) {
+        nextDifficulty = difficulties[currentIndex + 1];
+    }
+
+    // Handle score and messages
     if (scorePercentage >= 80) {
         if (currentDifficulty === "hard") {
-            // Player completed Hard mode -> THEY WIN!
             messageElement.innerText = "🎉 You Won the Game! 🎉";
             resultText.innerText = `You got ${correct} out of ${total} correct!`;
             confetti();
         } else {
-            // Player passed Easy or Medium -> Move to next level
             messageElement.innerText = `✅ Level Passed!`;
             resultText.innerText = `You got ${correct} out of ${total} correct! Moving to ${nextDifficulty} level.`;
-            nextLevelBtn.style.display = "block"; // Show "Next Level" button
+            nextLevelBtn.style.display = "block";
         }
     } else {
-        // Player failed, retry or go home
         messageElement.innerText = "😢 You Did Not Pass!";
         resultText.innerText = `You only got ${correct} out of ${total} correct. You need at least 80% to move on.`;
     }
 
+    // Restart Button - Restart the same level
     restartBtn.addEventListener('click', () => {
-        // Restart the same difficulty
-        window.location.href = `index.html?file=python.json&difficulty=${currentDifficulty}`;
+        const file = params.get('file') || 'python.json';
+        window.location.href = `gameplay.html?file=${file}&difficulty=${currentDifficulty}&correctAnswers=0&totalQuestions=10`;
     });
 
+    // Next Level Button - Move to the next difficulty
     nextLevelBtn.addEventListener('click', () => {
-        // Move to the next difficulty
-        window.location.href = `index.html?file=python.json&difficulty=${nextDifficulty}`;
+        const file = params.get('file') || 'python.json';
+        if (nextDifficulty) {
+            console.log(`Moving to next level: ${nextDifficulty}`);
+            window.location.href = `gameplay.html?file=${file}&difficulty=${nextDifficulty}&correctAnswers=0&totalQuestions=10`;
+        } else {
+            console.log("No next level found");
+        }
     });
 
+    // Home Button - Go back to home page
     homeBtn.addEventListener('click', () => {
         window.location.href = "index.html";
     });
