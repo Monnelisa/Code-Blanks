@@ -28,21 +28,10 @@
 
     <script src="game.js"></script>
     <script>
-        function getQueryParams() {
-            const params = {};
-            const queryString = window.location.search.substring(1);
-            const regex = /([^&=]+)=([^&]*)/g;
-            let m;
-            while (m = regex.exec(queryString)) {
-                params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
-            }
-            return params;
-        }
-
-        const params = getQueryParams();
-        const language = params.file ? params.file.split('/').pop().split('.')[0]: '';
+        const {file} = getQueryParams();  
+        const language = file ? file.split('/').pop().split('.')[0] : '';
         const titleElement = document.getElementById('game-title');
-        titleElement.textContent = `Let's start your ${language.charAt(0).toUpperCase() + language.slice(1)} quiz`;
+        titleElement.innerHTML = `Let's start your<br><span class="quiz-language">${language.charAt(0).toUpperCase() + language.slice(1)}</span> quiz 🧠`;
     </script>
 </body>
 </html>
