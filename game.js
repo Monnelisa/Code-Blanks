@@ -10,11 +10,11 @@ let currentLevelIndex = 0;
 
 function getQueryParams() {
     const params = new URLSearchParams(window.location.search);
-    currentLevelIndex = difficultyLevels.indexOf(difficulty);
-    
+    const difficulty = params.get('difficulty') || 'easy';  // FIXED
+    currentLevelIndex = difficultyLevels.indexOf(difficulty); // Now safe
     return {
-        file: params.get('file') || 'python.json',  
-        difficulty: params.get('difficulty') || 'easy' 
+        file: params.get('file') || 'python.json',
+        difficulty
     };
 }
 
@@ -77,28 +77,38 @@ function handleGuess() {
     const userInput = document.getElementById('guess-input').value.toLowerCase();
     document.getElementById('guess-input').value = '';
 
-    if (userInput.length !== 1 || !/[a-z]/.test(userInput)) {
-        document.getElementById('message').innerText = 'Please enter a single letter.';
+    // Allow single letters or numbers only
+    if (userInput.length !== 1 || !/[a-z0-9]/.test(userInput)) {
+        document.getElementById('message').innerText = 'Please enter a single letter or number.';
         return;
     }
 
     const answer = currentQuestion.answer.toLowerCase();
-    let correctGuess = false;
+    let foundInWord = false;
+    let revealedSomethingNew = false;
 
+    // Check each letter in the word
     for (let i = 0; i < answer.length; i++) {
         if (answer[i] === userInput) {
-            revealedIndices.add(i); // Persist correct guesses
-            correctGuess = true;
+            foundInWord = true;
+            if (!revealedIndices.has(i)) {
+                revealedIndices.add(i);
+                revealedSomethingNew = true;
+            }
         }
     }
 
-    if (correctGuess) {
-        document.getElementById('message').innerText = `Correct! '${userInput}' is in the word.`;
+    // Show message based on guess logic
+    if (foundInWord && revealedSomethingNew) {
+        document.getElementById('message').innerText = `✅ Correct! '${userInput}' is in the word.`;
+    } else if (foundInWord && !revealedSomethingNew) {
+        document.getElementById('message').innerText = `ℹ️ The letter '${userInput}' is already revealed. Try a different letter.`;
     } else {
         attempts--;
-        document.getElementById('message').innerText = `'${userInput}' is not in the word. Remaining attempts: ${attempts}`;
+        document.getElementById('message').innerText = `❌ '${userInput}' is not in the word. Remaining attempts: ${attempts}`;
     }
 
+    // Update word and check game state
     updateObscuredWord(answer);
 
     if (showAnswer(answer)) {
@@ -109,6 +119,9 @@ function handleGuess() {
         document.getElementById('message').innerText = `❌ Out of attempts! The correct word was: ${answer}`;
         setTimeout(() => startGame(), 2000);
     }
+
+    // Update attempts display
+    document.getElementById('attempts').innerText = `Remaining attempts: ${attempts}`;
 }
 
 function startGame() {

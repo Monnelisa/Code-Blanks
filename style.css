@@ -119,7 +119,7 @@ label {
     border-radius: 5px;
 }
 
-#restart-btn, #home-btn {
+#restart-btn, #home-btn, #next-level-btn {
     width: 90%;
     padding: 12px;
     font-size: 18px;
@@ -140,6 +140,11 @@ label {
     background: linear-gradient(to right, #36d1dc, #5b86e5);
 }
 
-#restart-btn:hover, #home-btn:hover {
+#next-level-btn {
+    background: linear-gradient(to right, #a30f59, #ff2bf4);
+}
+
+#restart-btn:hover, #home-btn:hover, #next-level-btn:hover {
     transform: scale(1.05);
+  
 }
