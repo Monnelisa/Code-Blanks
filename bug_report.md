@@ -1,5 +1,6 @@
 🐞 DevHangman – Bug Report
-Project: DevHangman – Missing Word Game
+
+Project: DevHangman
 Environment: Localhost (Tested on Windows 10, Python3 local server)
 Date Logged: July 3, 2025
 Status: In Development
@@ -32,7 +33,6 @@ Issue: When a player inputs an incorrect guess, the remaining attempts counter d
 
 Expected Behavior: The number of remaining attempts should reduce by 1 for each incorrect guess.
 
-Impact: Allows unlimited incorrect guesses, affecting game difficulty and flow.
 
 4. 🎨 “Next Level” Button Styling Inconsistent
 Issue: The "Next Level" button lacks consistent styling with other UI buttons (e.g., padding, font, hover effect).
@@ -43,7 +43,6 @@ Expected Behavior: All buttons should follow the same design system for a cohesi
 Issue: Questions assigned to different difficulty levels are appearing in the incorrect level:
 
 Medium-level questions are found in the Easy level.
-
 Hard-level questions appear while still in Medium.
 
 Expected Behavior: Questions should be categorized and served in their respective difficulty tiers.
@@ -53,24 +52,11 @@ Issue: After successfully completing the Medium level, the game does not progres
 
 Expected Behavior: On clicking “Next Level” after Medium, the game should transition to Hard level questions.
 
-📌 Summary of Recommendations
-Bug Description	Priority	Fix Type
-Incorrect feedback on revealed letters	Medium	Logic/UI Message
-Numeric input not accepted	High	Input Validation
-Attempts not updating	High	Game Logic
-Button styling inconsistent	Low	UI Styling
-Question-level mismatch	Medium	Data Structuring
-Level not progressing	High	Game Progression Logic
-
 ✅ Next Steps
- Refactor input validation to accept both letters and numbers.
 
- Update feedback messaging for already revealed letters.
-
- Fix logic to decrement attempts on incorrect guesses.
-
- Apply consistent CSS to the "Next Level" button.
-
- Reclassify and reorder question sets per difficulty.
-
- Review and correct level transition logic.
+ 1. Refactor input validation to accept both letters and numbers.
+ 2. Update feedback messaging for already revealed letters.
+ 3. Fix logic to decrement attempts on incorrect guesses.
+ 4. Apply consistent CSS to the "Next Level" button.
+ 5. Reclassify and reorder question sets per difficulty.
+ 6. Review and correct level transition logic.
