@@ -74,8 +74,8 @@ python3 -m http.server 8080
 If you're using Python 2, run the following command instead:
 
 ```bash
-sudo python -m SimpleHTTPServer 80
-```
+sudo 
+```python -m SimpleHTTPServer 80
 
 ### 3. Open the Game in Your Browser
 
