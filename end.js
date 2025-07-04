@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const correct = parseInt(params.get('correctAnswers')) || 0;
     const total = 10;     
-    const currentDifficulty = params.get('difficulty') || "easy";
+    const currentDifficulty = params.get('difficulty');
     const scorePercentage = (correct / total) * 100;
 
     const messageElement = document.getElementById('end-message');
@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const restartBtn = document.getElementById('restart-btn');
     const nextLevelBtn = document.getElementById('next-level-btn');
     const homeBtn = document.getElementById('home-btn');
+    const victorySound = new Audio('sounds/win.mp3');
 
     // Determine the next difficulty
     const difficulties = ["easy", "medium", "hard"];
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
             resultText.innerText = `You got ${correct} out of ${total} correct!`;
             confetti();
         } else {
+            victorySound.play();
             messageElement.innerText = `✅ Level Passed!`;
             resultText.innerText = `You got ${correct} out of ${total} correct! Moving to ${nextDifficulty} level.`;
             nextLevelBtn.style.display = "block";

@@ -7,6 +7,9 @@ let totalQuestions = 0;
 let difficultyLevels = ["easy", "medium", "hard"];
 let currentLevelIndex = 0;
 
+const correctSound = new Audio('sounds/correct.mp3');
+const wrongSound = new Audio('sounds/incorrect.mp3');
+
 
 function getQueryParams() {
     const params = new URLSearchParams(window.location.search);
@@ -100,10 +103,12 @@ function handleGuess() {
 
     // Show message based on guess logic
     if (foundInWord && revealedSomethingNew) {
+        correctSound.play();
         document.getElementById('message').innerText = `✅ Correct! '${userInput}' is in the word.`;
     } else if (foundInWord && !revealedSomethingNew) {
         document.getElementById('message').innerText = `ℹ️ The letter '${userInput}' is already revealed. Try a different letter.`;
     } else {
+        wrongSound.play();
         attempts--;
         document.getElementById('message').innerText = `❌ '${userInput}' is not in the word. Remaining attempts: ${attempts}`;
     }
@@ -112,10 +117,12 @@ function handleGuess() {
     updateObscuredWord(answer);
 
     if (showAnswer(answer)) {
+        correctSound.play();
         correctAnswers++;
         document.getElementById('message').innerText = '🎉 Well done! You guessed the word!';
         setTimeout(() => startGame(), 2000); 
     } else if (attempts <= 0) {
+        wrongSound.play();
         document.getElementById('message').innerText = `❌ Out of attempts! The correct word was: ${answer}`;
         setTimeout(() => startGame(), 2000);
     }
@@ -140,8 +147,20 @@ function startGame() {
     document.getElementById('attempts').innerText = `Remaining attempts: ${attempts}`;
     document.getElementById('message').innerText = '';
 
+    document.getElementById('current-level-text').innerText =
+    difficultyLevels[currentLevelIndex].charAt(0).toUpperCase() + difficultyLevels[currentLevelIndex].slice(1);
+    document.getElementById('question-number').innerText = totalQuestions;
+
 
 }
 
 document.getElementById('guess-button').addEventListener('click', handleGuess);
 window.onload = loadGameData;
+
+document.getElementById('footer-home-btn').addEventListener('click', () => {
+  const userConfirmed = confirm("Are you sure you want to go home? All progress will be lost.");
+  if (userConfirmed) {
+    window.location.href = "index.html";
+  }
+});
+
