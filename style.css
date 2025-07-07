@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Rye&family=Lora&display=swap');
 
+
+html, body {
+    height: 100%;
+}
+
 body {
     height: 100vh;
     margin: 0;
@@ -11,6 +16,7 @@ body {
     color: antiquewhite;
     font-family: 'Lora', serif;
     overflow: hidden; 
+    overflow-y: auto;
 }
 
 .container {
@@ -25,6 +31,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
     
 }
 
@@ -161,24 +169,24 @@ label {
 #progress-header {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    color: #ffcc00;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    font-size: 18px;
+    padding: 30px 30px;
+    font-size: 25px;
     font-weight: bold;
     position: fixed;
     top: 0;
-    left: 0;
-    z-index: 1000;
+    left: 30;
+    right: 30;
+    z-index: 999;
     box-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
 
 #game-footer {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 15px 0;
+    padding: 30px 30px;
     text-align: center;
     position: fixed;
     bottom: 0;

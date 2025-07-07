@@ -13,8 +13,8 @@ const wrongSound = new Audio('sounds/incorrect.mp3');
 
 function getQueryParams() {
     const params = new URLSearchParams(window.location.search);
-    const difficulty = params.get('difficulty') || 'easy';  // FIXED
-    currentLevelIndex = difficultyLevels.indexOf(difficulty); // Now safe
+    const difficulty = params.get('difficulty') || 'easy';  
+    currentLevelIndex = difficultyLevels.indexOf(difficulty); 
     return {
         file: params.get('file') || 'python.json',
         difficulty
