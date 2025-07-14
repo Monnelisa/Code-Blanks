@@ -147,9 +147,10 @@ function startGame() {
     document.getElementById('attempts').innerText = `Remaining attempts: ${attempts}`;
     document.getElementById('message').innerText = '';
 
-    document.getElementById('current-level-text').innerText =
+       
+    document.getElementById('level-number').textContent =
     difficultyLevels[currentLevelIndex].charAt(0).toUpperCase() + difficultyLevels[currentLevelIndex].slice(1);
-    document.getElementById('question-number').innerText = totalQuestions;
+    document.getElementById('current-question').textContent = totalQuestions;
 
 
 }
