@@ -1,5 +1,3 @@
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
 document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const correct = parseInt(params.get('correctAnswers')) || 0;
@@ -12,7 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const restartBtn = document.getElementById('restart-btn');
     const nextLevelBtn = document.getElementById('next-level-btn');
     const homeBtn = document.getElementById('home-btn');
-    const victorySound = new Audio('sounds/victory.mp3');
+    const victorySound = new Audio('sounds/win.mp3');
+    const winSound = new Audio('sound/victory.mp3')
+
 
     // Determine the next difficulty
     const difficulties = ["easy", "medium", "hard"];
@@ -27,26 +27,23 @@ document.addEventListener("DOMContentLoaded", () => {
     // Handle score and messages
     if (scorePercentage >= 80) {
         if (currentDifficulty === "hard") {
-            victorySound.play();
+            winSound.play();
             messageElement.innerText = "🎉 You Won the Game! 🎉";
             resultText.innerText = `You got ${correct} out of ${total} correct!`;
             triggerConfetti();
             restartBtn.style.display = "none";      
-            nextLevelBtn.style.display = "none";   
+            nextLevelBtn.style.display = "none"; 
+            
+            
         } else {
             victorySound.play();
             messageElement.innerText = `✅ Level Passed!`;
             resultText.innerText = `You got ${correct} out of ${total} correct! Moving to ${nextDifficulty} level.`;
-            restartBtn.style.display = "none";     // Hide restart if passed
-            nextLevelBtn.style.display = "block";  // Only show next if not final level
+            nextLevelBtn.style.display = "block";
         }
     } else {
         messageElement.innerText = "😢 You Did Not Pass!";
         resultText.innerText = `You only got ${correct} out of ${total} correct. You need at least 80% to move on.`;
-
-        // Show restart only if failed (even on hard level)
-        restartBtn.style.display = "block";
-        nextLevelBtn.style.display = "none";
     }
 
     // Restart Button - Restart the same level
@@ -73,24 +70,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function triggerConfetti() {
     const duration = 3 * 1000;
-    const animationEnd = Date.now() + duration;
+    const end = Date.now() + duration;
 
-    const interval = setInterval(() => {
-        if (Date.now() > animationEnd) {
-            clearInterval(interval);
-            return;
-        }
-
+    (function frame() {
         confetti({
-            particleCount: 50,
-            startVelocity: 30,
-            spread: 360,
-            origin: {
-                x: Math.random(),
-                y: Math.random() - 0.2
-            }
+            particleCount: 5,
+            spread: 160,
+            origin: { y: 0.6 }
         });
-    }, 250);
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+    })();
 }
 
 });
