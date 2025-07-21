@@ -212,4 +212,31 @@ label {
     color: antiquewhite; /* keeps color consistent */
 }
 
+/* 📱 Mobile-Specific Adjustments */
+@media (max-width: 600px) {
+    .title {
+        font-size: 1.8rem;
+    }
 
+    #guess-input, #guess-button, #restart-btn, #home-btn, #next-level-btn {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .letter-block {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+        line-height: 30px;
+    }
+
+    .language-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    #progress-header, #game-footer {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
