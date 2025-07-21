@@ -158,7 +158,7 @@ function startGame() {
 document.getElementById('guess-button').addEventListener('click', handleGuess);
 window.onload = loadGameData;
 
-document.getElementById('footer-home-btn').addEventListener('click', () => {
+document.getElementById('game-footer').addEventListener('click', () => {
   const userConfirmed = confirm("Are you sure you want to go home? All progress will be lost.");
   if (userConfirmed) {
     window.location.href = "index.html";
