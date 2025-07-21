@@ -76,7 +76,7 @@ If you're using Python 2, run the following command instead:
 ```bash
 sudo 
 ```python -m SimpleHTTPServer 80
-
+```
 ### 3. Open the Game in Your Browser
 
 Once the server is running, open your web browser and visit:
