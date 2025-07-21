@@ -1,6 +1,6 @@
-🐞 DevHangman – Bug Report
+🐞 CodeBlanks – Bug Report
 
-Project: DevHangman
+Project: Code Blanks
 
 Environment: Localhost (Tested on Windows 10, Python3 local server)
 
@@ -11,7 +11,7 @@ Status: In Development
 Reported By: Monnelisa Mangalie
 
 🔍 Summary
-    During local testing of the DevHangman game, several functional and UI/UX bugs were identified. These issues affect gameplay logic, progression across levels, and interface consistency.
+    During local testing of the Code Blanks game, several functional and UI/UX bugs were identified. These issues affect gameplay logic, progression across levels, and interface consistency.
 
 
 🧪 Detailed Issues

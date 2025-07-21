@@ -1,6 +1,6 @@
 # Code Blanks
 
-Welcome to Code Blanks! Test your programming knowledge in a fun way by playing Hangman with questions from different programming languages.
+Welcome to Code Blanks! Test your programming knowledge in a fun way by playing Code Blanks with questions from different programming languages.
 
 ## Table of Contents
 
@@ -34,13 +34,13 @@ To play the game locally, you need:
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/Monnelisa/DevHangman_game.git
+git clone https://github.com/Monnelisa/Code-Blanks.git
 ```
 
 Navigate to the project directory:
 
 ```bash
-cd DevHangman_game
+cd Code-Blanks
 ```
 
 ### 2. Start the Game Locally
@@ -52,7 +52,7 @@ To run the game on your local machine, follow these steps:
 Open your terminal and navigate to the project directory:
 
 ```bash
-cd /path/to/DevHangman_game
+cd /path/to/Code-Blanks
 ```
 
 Start a simple HTTP server on port 80 using Python:
