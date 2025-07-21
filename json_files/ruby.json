@@ -20,7 +20,7 @@
         "difficulty": "easy"
     },
     {
-        "question": "What is the method to get the length of an array in Ruby?",
+        "question": "Which method in Ruby returns the total number of elements in an array?",
         "answer": "length",
         "difficulty": "easy"
     },
@@ -40,22 +40,22 @@
         "difficulty": "easy"
     },
     {
-        "question": "What method is used to remove the last element from an array in Ruby?",
-        "answer": "pop",
+        "question": "What keyword is used to define a conditional statement in Ruby?",
+        "answer": "if",
         "difficulty": "medium"
     },
     {
-        "question": "What keyword is used to define a constant in Ruby?",
-        "answer": "CONSTANT",
+        "question": "What Ruby method starts a separate path of execution to run code concurrently?",
+        "answer": "thread",
         "difficulty": "medium"
     },
     {
-        "question": "What method is used to iterate over each element in an array in Ruby?",
+        "question": "Which Ruby method allows you to perform an action on every element in an array?",
         "answer": "each",
         "difficulty": "medium"
     },
     {
-        "question": "What is the method to check if a string includes a substring in Ruby?",
+        "question": "Which method can you use in Ruby to determine whether a substring exists within a string?",
         "answer": "include?",
         "difficulty": "medium"
     },
@@ -70,12 +70,12 @@
         "difficulty": "medium"
     },
     {
-        "question": "What keyword is used to define a block of code that can be passed to methods in Ruby?",
-        "answer": "lambda",
+        "question": "What method is used to combine two strings in Ruby?",
+        "answer": "concat",
         "difficulty": "medium"
     },
     {
-        "question": "What method is used to find the index of an element in an array in Ruby?",
+        "question": "Which method returns the position of a specific item in a Ruby array?",
         "answer": "index",
         "difficulty": "medium"
     },
@@ -85,7 +85,7 @@
         "difficulty": "medium"
     },
     {
-        "question": "What method is used to define a class method in Ruby?",
+        "question": "Which keyword refers to the current object inside a method in Ruby?",
         "answer": "self",
         "difficulty": "hard"
     },
@@ -95,8 +95,8 @@
         "difficulty": "hard"
     },
     {
-        "question": "What is the term for a class that cannot be instantiated in Ruby?",
-        "answer": "abstract",
+        "question": "Which keyword in Ruby is used to create a container for grouping methods, constants, and classes to be shared across different parts of a program?",
+        "answer": "module",
         "difficulty": "hard"
     },
     {
@@ -105,12 +105,12 @@
         "difficulty": "hard"
     },
     {
-        "question": "What keyword is used to include a module in a class in Ruby?",
-        "answer": "include",
+        "question": "What type of variable is accessible only within the current method in Ruby?",
+        "answer": "local",
         "difficulty": "hard"
     },
     {
-        "question": "What is the method used to define a private method in Ruby?",
+        "question": "Which keyword makes a method inaccessible outside its class in Ruby?",
         "answer": "private",
         "difficulty": "hard"
     }

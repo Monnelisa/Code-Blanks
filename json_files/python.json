@@ -1,153 +1,154 @@
 [
-    {
-        "question": "In Python, which keyword is used to define a function?",
-        "answer": "def",
-        "difficulty": "easy"
-    },
-    {
-        "question": "Which keyword is used to delete an object in Python?",
-        "answer": "del",
-        "difficulty": "easy"
-    },
-    {
-        "question": "What function is used to get the length of a list?",
-        "answer": "len",
-        "difficulty": "easy"
-    },
-    {
-        "question": "Which built-in function returns the smallest item?",
-        "answer": "min",
-        "difficulty": "easy"
-    },
-    {
-        "question": "Which built-in function returns the largest item?",
-        "answer": "max",
-        "difficulty": "easy"
-    },
-    {
-        "question": "Which function is used to iterate through two or more iterables in parallel?",
-        "answer": "zip",
-        "difficulty": "easy"
-    },
-    {
-        "question": "Which method is used to remove the last item from a list?",
-        "answer": "pop",
-        "difficulty": "easy"
-    },
-    {
-        "question": "Which module in Python is used for regular expressions?",
-        "answer": "re",
-        "difficulty": "easy"
-    },
-    {
-        "question": "Which function is used to convert a value to a string in Python?",
-        "answer": "str",
-        "difficulty": "easy"
-    },
-    {
-        "question": "What keyword is used to exit a loop?",
-        "answer": "break",
-        "difficulty": "easy"
-    },
-    {
-        "question": "Which keyword is used to handle exceptions?",
-        "answer": "try",
-        "difficulty": "medium"
-    },
-    {
-        "question": "What function is used to output to the console?",
-        "answer": "print",
-        "difficulty": "medium"
-    },
-    {
-        "question": "Which keyword is used to call a method from the parent class?",
-        "answer": "super",
-        "difficulty": "medium"
-    },
-    {
-        "question": "Which method is used to remove all elements from a list?",
-        "answer": "clear",
-        "difficulty": "medium"
-    },
-    {
-        "question": "Which method is used to find the index of an item in a list?",
-        "answer": "index",
-        "difficulty": "medium"
-    },
-    {
-        "question": "Which module in Python is used for mathematical functions?",
-        "answer": "math",
-        "difficulty": "medium"
-    },
-    {
-        "question": "Which module in Python provides a method to parse JSON?",
-        "answer": "json",
-        "difficulty": "medium"
-    },
-    {
-        "question": "Which keyword is used to import modules?",
-        "answer": "import",
-        "difficulty": "medium"
-    },
-    {
-        "question": "In Python, which data type is immutable?",
-        "answer": "tuple",
-        "difficulty": "medium"
-    },
-    {
-        "question": "Which method is used to add an item to a list?",
-        "answer": "append",
-        "difficulty": "medium"
-    },
-    {
-        "question": "Which function is used to sort items in a list?",
-        "answer": "sorted",
-        "difficulty": "hard"
-    },
-    {
-        "question": "Which keyword is used to declare a block of code that belongs to a class?",
-        "answer": "class",
-        "difficulty": "hard"
-    },
-    {
-        "question": "Which keyword is used to create an anonymous function?",
-        "answer": "lambda",
-        "difficulty": "hard"
-    },
-    {
-        "question": "Which function is used to create a complex number in Python?",
-        "answer": "complex",
-        "difficulty": "hard"
-    },
-    {
-        "question": "What type of language is Python?",
-        "answer": "interpreted",
-        "difficulty": "hard"
-    },
-    {
-        "question": "Which data structure is used to store key-value pairs in Python?",
-        "answer": "dictionary",
-        "difficulty": "hard"
-    },
-    {
-        "question": "Which keyword is used to check if an object is an instance of a class or a subclass thereof?",
-        "answer": "isinstance",
-        "difficulty": "hard"
-    },
-    {
-        "question": "Which function is used to get the length of an object?",
-        "answer": "isinstance",
-        "difficulty": "hard"
-    },
-    {
-        "question": "Which built-in function returns a sorted list of the specified iterable’s elements?",
-        "answer": "sorted",
-        "difficulty": "hard"
-    },
-    {
-        "question": "Which keyword is used to define a block of code belonging to a class?",
-        "answer": "class",
-        "difficulty": "hard"
-    }
-  ]
-  
+  {
+    "question": "What keyword do you use to create a function that belongs to a class in Python?",
+    "answer": "def",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which keyword in Python allows you to delete a variable or object?",
+    "answer": "del",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which function in Python returns the number of items in a list or string?",
+    "answer": "len",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which built-in function in Python returns the smallest value in an iterable?",
+    "answer": "min",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which built-in function in Python returns the largest value in an iterable?",
+    "answer": "max",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which built-in function in Python allows you to combine elements from multiple iterables?",
+    "answer": "zip",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which list method in Python removes and returns the last item?",
+    "answer": "pop",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which module in Python handles pattern matching with regular expressions?",
+    "answer": "re",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which function in Python converts a value to its string representation?",
+    "answer": "str",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which keyword in Python is used to exit a loop early?",
+    "answer": "break",
+    "difficulty": "easy"
+  },
+
+  {
+    "question": "Which keyword in Python is used to start handling exceptions?",
+    "answer": "try",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which function in Python is used to display output in the console?",
+    "answer": "print",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which keyword in Python is used to refer to a parent class method?",
+    "answer": "super",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which list method in Python removes all elements from a list?",
+    "answer": "clear",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which list method in Python returns the position of a specified value?",
+    "answer": "index",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which Python module provides access to mathematical operations?",
+    "answer": "math",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which module in Python provides tools for working with JSON data?",
+    "answer": "json",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which keyword in Python is used to bring in external modules or libraries?",
+    "answer": "import",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which built-in data type in Python is ordered and immutable?",
+    "answer": "tuple",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which list method in Python is used to add an item to the end of a list?",
+    "answer": "append",
+    "difficulty": "medium"
+  },
+
+  {
+    "question":  "Which error occurs when trying to divide a number by zero?",
+    "answer": "ZeroDivisionError",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which keyword is used to indicate that a function is a generator in Python?",
+    "answer": "yield",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which keyword in Python creates an anonymous function in a single line?",
+    "answer": "lambda",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which built-in function in Python can create complex numbers?",
+    "answer": "complex",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which term best describes Python as a language that executes code line-by-line at runtime?",
+    "answer": "interpreted",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which Python data structure allows you to store values using keys instead of indices?",
+    "answer": "dictionary",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which built-in function in Python checks whether an object is an instance of a specific class?",
+    "answer": "isinstance",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which keyword ensures proper setup and teardown of resources in Python?",
+    "answer": "with",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which function in Python returns a new arranged list from elements of a given iterable?",
+    "answer": "sorted",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which keyword in Python defines a blueprint for creating objects and encapsulating data?",
+    "answer": "class",
+    "difficulty": "hard"
+  }
+]

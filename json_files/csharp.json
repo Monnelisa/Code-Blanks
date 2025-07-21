@@ -1,16 +1,16 @@
 [
     {
-      "question": "Which keyword is used to define a class in C#?",
+      "question": "What is the name of the structure in C# that lets you group data and functions together?",
       "answer": "class",
       "difficulty": "easy"
     },
     {
-      "question": "Which keyword is used to define a method in C#?",
+      "question": "Which keyword is used in C# to specify that a method does not return a value?",
       "answer": "void",
       "difficulty": "easy"
     },
     {
-      "question": "Which symbol is used to denote a namespace in C#?",
+      "question": "Which keyword is used to define a namespace in C#?",
       "answer": "namespace",
       "difficulty": "easy"
     },
@@ -20,7 +20,7 @@
       "difficulty": "easy"
     },
     {
-      "question": "Which method is used to print output in C#?",
+      "question": "Which method of the Console class is used to print output in C#?",
       "answer": "WriteLine",
       "difficulty": "easy"
     },
@@ -55,12 +55,12 @@
       "difficulty": "medium"
     },
     {
-      "question": "Which keyword is used to inherit a class in C#?",
-      "answer": "extends",
+      "question": "Which keyword is used in C# to allow a base class method to be overridden in a derived class?",
+      "answer": "virtual",
       "difficulty": "medium"
     },
     {
-      "question": "Which method is used to read input from the console in C#?",
+      "question": "Which method of the Console class is used to read input in C#?",
       "answer": "ReadLine",
       "difficulty": "medium"
     },
@@ -75,7 +75,7 @@
       "difficulty": "medium"
     },
     {
-      "question": "Which keyword is used to continue the next iteration of a loop in C#?",
+      "question": "Which keyword is used to go the next iteration of a loop in C#?",
       "answer": "continue",
       "difficulty": "medium"
     },
@@ -85,68 +85,68 @@
       "difficulty": "medium"
     },
     {
-      "question": "Which keyword is used to define an abstract class in C#?",
+      "question": "What keyword is used to declare a class that serves as a base class and may have methods without implementations?",
       "answer": "abstract",
       "difficulty": "medium"
     },
     {
-      "question": "Which keyword is used to override a method in C#?",
+      "question": "Which word do you use to replace a method’s behavior from a base class in C#?",
       "answer": "override",
       "difficulty": "medium"
     },
     {
-      "question": "Which keyword is used to specify a double-precision floating-point type in C#?",
+      "question": "Which keyword is used for numbers with decimals that need extra precision in C#?",
       "answer": "double",
       "difficulty": "medium"
     },
     {
-      "question": "Which keyword is used to define a delegate in C#?",
+      "question": "Which keyword lets you store a reference to a method in C#?",
       "answer": "delegate",
       "difficulty": "hard"
     },
     {
-      "question": "Which keyword is used to declare a property in C#?",
+      "question": "What class member lets you read or write values through special methods called get and set?",
       "answer": "property",
       "difficulty": "hard"
     },
     {
-      "question": "Which keyword is used to implement an interface in C#?",
-      "answer": "implements",
+      "question": "Which keyword in C# is used inside a property to retrieve its value?",
+      "answer": "get",
       "difficulty": "hard"
     },
     {
-      "question": "Which keyword is used to declare a lambda expression in C#?",
-      "answer": "lambda",
+      "question": "Which keyword is used inside a property to assign a value to the underlying field?",
+      "answer": "set",
       "difficulty": "hard"
     },
     {
-      "question": "Which keyword is used to define a structure in C#?",
+      "question": "Which keyword is used in C# to define a value type that can hold related variables under one name?",
       "answer": "struct",
       "difficulty": "hard"
     },
     {
-      "question": "Which keyword is used to define a static method in C#?",
+      "question": "Which keyword do you use to create a method that belongs to the class itself rather than any instance?",
       "answer": "static",
       "difficulty": "hard"
     },
     {
-      "question": "Which method is used to sort an array in C#?",
+      "question": "What method is commonly used in C# to arrange the elements of an array in order?",
       "answer": "Sort",
       "difficulty": "hard"
     },
     {
-      "question": "Which keyword is used to specify a nullable type in C#?",
-      "answer": "nullable",
+      "question": "Which keyword is used in C# to define a generic value type that can also hold null?",
+      "answer": "Nullable",
       "difficulty": "hard"
     },
     {
-      "question": "Which keyword is used to define a read-only property in C#?",
+      "question": "Which keyword in C# is used to declare a field that can only be assigned during initialization or in a constructor?",
       "answer": "readonly",
       "difficulty": "hard"
     },
     {
-      "question": "Which keyword is used to convert types explicitly in C#?",
-      "answer": "cast",
+      "question": "Which C# keyword is used to try converting one type to another safely at runtime?",
+      "answer": "as",
       "difficulty": "hard"
     }
   ]

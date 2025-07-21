@@ -58,7 +58,7 @@ function selectRandomLettersFrom(word) {
 
 function updateObscuredWord(word) {
     const obscuredWordContainer = document.getElementById('obscured-word');
-    obscuredWordContainer.innerHTML = ''; // Clear previous content
+    obscuredWordContainer.innerHTML = ''; 
 
     word.split('').forEach((letter, index) => {
         const letterBlock = document.createElement('span');

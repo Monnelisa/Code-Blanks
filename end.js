@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const restartBtn = document.getElementById('restart-btn');
     const nextLevelBtn = document.getElementById('next-level-btn');
     const homeBtn = document.getElementById('home-btn');
-    const victorySound = new Audio('sounds/win.mp3');
-    const winSound = new Audio('sound/victory.mp3')
+    const winSound = new Audio('sounds/win.mp3');
+    const victorySound = new Audio('sounds/victory.mp3')
 
 
     // Determine the next difficulty
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Handle score and messages
     if (scorePercentage >= 80) {
         if (currentDifficulty === "hard") {
-            winSound.play();
+            victorySound.play();
             messageElement.innerText = "🎉 You Won the Game! 🎉";
             resultText.innerText = `You got ${correct} out of ${total} correct!`;
             triggerConfetti();
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
             
             
         } else {
-            victorySound.play();
+            winSound.play();
             messageElement.innerText = `✅ Level Passed!`;
             resultText.innerText = `You got ${correct} out of ${total} correct! Moving to ${nextDifficulty} level.`;
             nextLevelBtn.style.display = "block";

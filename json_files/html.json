@@ -5,7 +5,7 @@
       "difficulty": "easy"
     },
     {
-      "question": "Which HTML element is used to display a heading level 1?",
+      "question": "Which semantic HTML element represents the highest level and is typically used to define the main title of a document?",
       "answer": "h1",
       "difficulty": "easy"
     },
@@ -25,7 +25,7 @@
       "difficulty": "easy"
     },
     {
-      "question": "Which HTML attribute is used to specify an inline CSS style?",
+      "question": "Which HTML attribute allows you to apply inline CSS declarations directly to an individual HTML element?",
       "answer": "style",
       "difficulty": "easy"
     },
@@ -35,17 +35,17 @@
       "difficulty": "easy"
     },
     {
-      "question": "Which HTML element is used to create a form?",
+      "question": "Which HTML element is used to create a section for user input fields?",
       "answer": "form",
-      "difficulty": "easy"
+      "difficulty": "medium"
     },
     {
-      "question": "Which HTML element is used to embed an image?",
+      "question": "Which HTML element is used to embed a visual file, such as a JPEG or PNG, directly into a webpage?",
       "answer": "img",
       "difficulty": "medium"
     },
     {
-      "question": "Which HTML attribute is used to specify an ID for an element?",
+      "question": "Which global HTML attribute assigns a unique identifier to an element?",
       "answer": "id",
       "difficulty": "medium"
     },
@@ -57,7 +57,7 @@
     {
       "question": "Which HTML element is used to create a table cell?",
       "answer": "td",
-      "difficulty": "medium"
+      "difficulty": "easy"
     },
     {
       "question": "Which HTML element is used to create a line break?",
@@ -70,19 +70,19 @@
       "difficulty": "medium"
     },
     {
-      "question": "Which HTML element is used to define the title of the document?",
+      "question": "Which HTML element defines the text shown on the browser tab?",
       "answer": "title",
-      "difficulty": "medium"
+      "difficulty": "hard"
     },
     {
-      "question": "Which HTML element is used to create a clickable button?",
+      "question": "Which HTML element is clickable and can trigger actions when activated by the user?",
       "answer": "button",
-      "difficulty": "medium"
+      "difficulty": "hard"
     },
     {
-      "question": "Which HTML attribute is used to specify alternative text for an image?",
+      "question": "Which HTML attribute provides descriptive text for an image?",
       "answer": "alt",
-      "difficulty": "medium"
+      "difficulty": "hard"
     },
     {
       "question": "Which HTML element is used to create a table header cell?",
@@ -90,24 +90,24 @@
       "difficulty": "medium"
     },
     {
-      "question": "Which HTML element is used to create a section in a document?",
+      "question": "Which semantic HTML element is used to group related content in a document?",
       "answer": "section",
       "difficulty": "hard"
     },
     {
       "question": "Which HTML attribute is used to specify a class for an element?",
       "answer": "class",
-      "difficulty": "hard"
+      "difficulty": "medium"
     },
     {
       "question": "Which HTML element is used to create a definition list?",
       "answer": "dl",
-      "difficulty": "hard"
+      "difficulty": "medium"
     },
     {
       "question": "Which HTML element is used to create a definition term?",
       "answer": "dt",
-      "difficulty": "hard"
+      "difficulty": "medium"
     },
     {
       "question": "Which HTML element is used to create a definition description?",
@@ -115,14 +115,14 @@
       "difficulty": "hard"
     },
     {
-      "question": "Which HTML element is used to create a blockquote?",
+      "question": "Which HTML element is used to represent a section that is quoted from another source?",
       "answer": "blockquote",
       "difficulty": "hard"
     },
     {
       "question": "Which HTML element is used to create an ordered list?",
       "answer": "ol",
-      "difficulty": "hard"
+      "difficulty": "easy"
     },
     {
       "question": "Which HTML attribute is used to specify the character encoding for the document?",
@@ -130,14 +130,14 @@
       "difficulty": "hard"
     },
     {
-      "question": "Which HTML element is used to create a header for a section?",
+      "question": "Which HTML element is used to define a container for introductory content at the top of a section?",
       "answer": "header",
       "difficulty": "hard"
     },
     {
-      "question": "Which HTML element is used to create a footer for a section?",
+      "question": "Which HTML element is used to enclose information at the bottom of a section?",
       "answer": "footer",
-      "difficulty": "easy"
+      "difficulty": "hard"
     },
     {
       "question": "Which HTML element is used to create a navigation menu?",

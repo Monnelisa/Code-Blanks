@@ -1,11 +1,11 @@
 [
   {
-      "question": "Which keyword is used to define a class in Java?",
+      "question": "Which keyword in Java is used to declare a user-defined blueprint from which objects are created?",
       "answer": "class",
       "difficulty": "easy"
   },
   {
-      "question": "Which method is used to output text to the console in Java?",
+      "question": "Which Java method is commonly used to print output to the console?",
       "answer": "println",
       "difficulty": "easy"
   },
@@ -20,7 +20,7 @@
       "difficulty": "easy"
   },
   {
-      "question": "Which keyword is used to define a method in Java?",
+      "question": "Which return type is used for a method that doesn’t return any value in Java?",
       "answer": "void",
       "difficulty": "easy"
   },
@@ -40,14 +40,14 @@
       "difficulty": "easy"
   },
   {
-      "question": "Which keyword is used to exit a loop in Java?",
+      "question": "Which keyword is used to terminate the loop early in Java?",
       "answer": "break",
       "difficulty": "easy"
   },
   {
       "question": "Which keyword is used to return a value from a method in Java?",
       "answer": "return",
-      "difficulty": "easy"
+      "difficulty": "medium"
   },
   {
       "question": "Which collection class allows you to grow or shrink its size and provides indexed access to its elements in Java?",
@@ -55,12 +55,12 @@
       "difficulty": "medium"
   },
   {
-      "question": "Which method is used to find the length of a string in Java?",
+      "question": "Which method is used to get the length of a string in Java?",
       "answer": "length",
-      "difficulty": "medium"
+      "difficulty": "easy"
   },
   {
-      "question": "Which method is used to convert a string to lowercase in Java?",
+      "question": "Which method is used to convert a string to small letters in Java?",
       "answer": "toLowerCase",
       "difficulty": "medium"
   },
@@ -90,57 +90,57 @@
       "difficulty": "medium"
   },
   {
-      "question": "Which keyword is used to import a package in Java?",
+      "question": "Which keyword in Java is used to include external classes or entire packages into your source file?",
       "answer": "import",
-      "difficulty": "medium"
+      "difficulty": "hard"
   },
   {
       "question": "Which class is the superclass of all classes in Java?",
       "answer": "Object",
-      "difficulty": "medium"
+      "difficulty": "hard"
   },
   {
-      "question": "Which keyword is used to declare an abstract class in Java?",
+      "question": "Which keyword in Java is used to declare a class that cannot be instantiated and may include methods without implementations?",
       "answer": "abstract",
       "difficulty": "hard"
   },
   {
-      "question": "Which keyword is used to create an enumerated type in Java?",
+      "question": "Which keyword in Java defines a special data type that enables a variable to be a set of predefined constants?",
       "answer": "enum",
       "difficulty": "hard"
   },
   {
-      "question": "Which class is used for handling date and time in Java?",
-      "answer": "Date",
-      "difficulty": "hard"
+      "question": "Which Java statement is used to run code based on multiple possible values of a variable?",
+      "answer": "switch",
+      "difficulty": "medium"
   },
   {
       "question": "Which class provides methods for manipulating arrays in Java?",
       "answer": "Arrays",
+      "difficulty": "medium"
+  },
+  {
+      "question": "Which feature in Java allows one interface to inherit from another?",
+      "answer": "extends",
       "difficulty": "hard"
   },
   {
-      "question": "Which class provides methods for working with collections in Java?",
-      "answer": "Collections",
-      "difficulty": "hard"
-  },
-  {
-      "question": "Which class is used for input and output operations in Java?",
+      "question": "Which class is commonly used to get user input from the console in Java?",
       "answer": "Scanner",
       "difficulty": "hard"
   },
   {
-      "question": "Which keyword is used to synchronize methods in Java?",
+      "question": "Which keyword in Java is used to control access to a method by allowing only one thread to execute it at a time?",
       "answer": "synchronized",
       "difficulty": "hard"
   },
   {
-      "question": "Which keyword is used to create a native method in Java?",
+      "question": "Which keyword in Java marks a method as being implemented externally in platform-specific code?",
       "answer": "native",
       "difficulty": "hard"
   },
   {
-      "question": "Which keyword is used to declare a static block in Java?",
+      "question":  "Which keyword is used to define a block that runs once when the class is loaded?",
       "answer": "static",
       "difficulty": "hard"
   },
