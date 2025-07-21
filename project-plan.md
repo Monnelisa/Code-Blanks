@@ -57,6 +57,7 @@ CodeBlanks is an educational word-guessing game designed to help beginner progra
 - Add hints or definitions for guessed words
 - Introduce timed rounds for more challenge
 - Export leaderboard or high scores
+- Make Questions and Answers more challenging.
 
 ## 🙋🏽‍♀️ About the Developer
 Created by Monnelisa Mangalie – a QA professional and aspiring software developer passionate about making programming education more accessible and engaging through gamification.

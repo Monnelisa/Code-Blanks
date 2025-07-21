@@ -1,6 +1,6 @@
-# Developer Hangman
+# Code Blanks
 
-Welcome to Developer Hangman! Test your programming knowledge in a fun way by playing Hangman with questions from different programming languages.
+Welcome to Code Blanks! Test your programming knowledge in a fun way by playing Hangman with questions from different programming languages.
 
 ## Table of Contents
 
