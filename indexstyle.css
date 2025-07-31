@@ -228,7 +228,7 @@ p {
   background-color: rgb(3, 3, 100);
   border-radius: 10px;
   text-align: center;
-  height: 80vh;
+  height: 90vh;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
@@ -261,7 +261,7 @@ p {
 
   .language-selection label {
     font-size: 18px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
     .language-icons .item:hover img {
     scale: 1.2 !important; /* reduced scale */
