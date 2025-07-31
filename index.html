@@ -5,40 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Blanks</title>
     <link rel="icon" href="images/icon.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="indexstyle.css">
 </head>
 <body>
-
+  <div class="main-container">
     <div class="container">
-        <div class="title">Welcome to <span class="highlight">CodeBlanks</span><span class="cursor">▮▮</span></div>
-        <p>“Fill the blanks. Sharpen your syntax. Level up your dev brain!👾” </p>
-
-        <div class="language-selection">
-            <label>Select a language to play:</label>
-            
-            <div class="language-icons">
-                <img src="images/html.jpg" alt="HTML" class="language-icon" data-language="html">
-                <img src="images/java.jpg" alt="Java" class="language-icon" data-language="java">
-                <img src="images/javascript.jpg" alt="JavaScript" class="language-icon" data-language="javascript">
-                <br>
-                <img src="images/ruby_plain_wordmark_logo_icon_146362.jpg" alt="Ruby" class="language-icon" data-language="ruby">
-                <img src="images/plus_logo_c_icon_214621.jpg" alt="CSharp" class="language-icon" data-language="csharp">
-                <img src="images/python.jpg" alt="Python" class="language-icon" data-language="python">
-            </div>
-        </div>
-
+      <div class="title">
+        Welcome to <span class="highlight">CodeBlanks</span><span class="cursor">▮▮</span>
+      </div>
+      <p>“Fill the blanks. Sharpen your syntax. Level up your dev brain!👾” </p>
     </div>
 
+    <div class="language-selection">
+      <label>Select a language to play:</label>
+      <div class="language-icons">
+        <!-- Your circular animated icons remain here -->
+        <div class="item"><img src="images/html.jpg" alt="HTML" data-language="html"></div>
+        <div class="item"><img src="images/java.jpg" alt="Java" data-language="java"></div>
+        <div class="item"><img src="images/javascript.jpg" alt="JavaScript" data-language="javascript"></div>
+        <div class="item"><img src="images/ruby_plain_wordmark_logo_icon_146362.jpg" alt="Ruby" data-language="ruby"></div>
+        <div class="item"><img src="images/plus_logo_c_icon_214621.jpg" alt="CSharp" data-language="csharp"></div>
+        <div class="item"><img src="images/python.jpg" alt="Python" data-language="python"></div>
+      </div>
+    </div>
+  </div>
+    
     <script>
         // Add click event to language icons
-        const languageIcons = document.querySelectorAll('.language-icon');
-        languageIcons.forEach(icon => {
-            icon.addEventListener('click', function() {
-                const language = this.getAttribute('data-language');
-                const file = `json_files/${language}.json`;
-                window.location.href = `gameplay.html?file=${file}&difficulty=easy`;
-            });
+    const languageIcons = document.querySelectorAll('.language-icons img');
+    languageIcons.forEach(icon => {
+        icon.addEventListener('click', function() {
+            const language = this.getAttribute('data-language');
+            const file = `json_files/${language}.json`;
+            window.location.href = `gameplay.html?file=${file}&difficulty=easy`;
         });
+    });    
     </script>
 
 </body>

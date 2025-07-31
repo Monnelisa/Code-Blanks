@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&family=Lora&display=swap');
+
+
+:root {
+  --body-color: linear-gradient(to right, rgb(21, 3, 102), #0000FF, #5b65f3);
+  --text-color: antiquewhite;
+  --primary-color: #0e0bc4;
+  --secondary-color: #00f7ff;
+
+  color-scheme: dark;
+}
+
+*,
+*:before,
+*:after {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  background: var(--body-color);
+  margin: 0;
+  padding: 20px;
+  font-family: 'Lora', serif;
+}
+
+.language-icons {
+  --size: 120px;
+  --offset: 30px;
+  --duration: 30s;
+
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  aspect-ratio: 1 / 1;
+  pointer-events: none;
+  display: inline-grid;
+  border-radius: 9999px;
+  width: calc(var(--size) * 3);
+  border: 6px solid var(--primary-color);
+  transition: box-shadow 0.3s ease-in-out;
+  animation: spin-out var(--duration) linear infinite;
+
+  & .item {
+    z-index: 1;
+    display: flex;
+    grid-area: 1 / 1;
+    width: var(--size);
+    aspect-ratio: 1 / 1;
+    pointer-events: auto;
+    border-radius: 9999px;
+    animation: spin-in var(--duration) linear infinite reverse;
+    offset: circle(
+        calc(var(--size) / (2 * sin(0.5turn / sibling-count())) + var(--offset))
+      )
+      calc(100% * sibling-index() / sibling-count()) 0deg;
+
+    & img {
+      width: inherit;
+      height: inherit;
+      pointer-events: auto;
+      border-radius: 9999px;
+      border: 3px solid var(--primary-color);
+
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+      transition-property: box-shadow, scale, border;
+    }
+
+    &:hover {
+      z-index: 2;
+
+      & img {
+        scale: 1.5;
+        border-color: var(--secondary-color);
+        box-shadow: 0 0 1rem var(--secondary-color);
+      }
+
+      & ~ * img {
+        scale: 0.6;
+      }
+    }
+
+    &:has(~ *:hover) img {
+      scale: 0.6;
+    }
+  }
+
+  &::before {
+    content: "";
+    z-index: -1;
+    border: inherit;
+    position: absolute;
+    width: var(--size);
+    aspect-ratio: 1 / 1;
+    border-radius: 0.25rem;
+
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    transform: translate(-50%, -50%);
+
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-property: transform, border-radius, border, box-shadow;
+  }
+
+  &::after {
+    content: "";
+    z-index: -1;
+    inset: -6px;
+    width: inherit;
+    height: inherit;
+    border: inherit;
+    position: absolute;
+    border-radius: inherit;
+    animation: spin-in var(--duration) linear infinite reverse;
+
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-property: scale, border-radius, border, box-shadow;
+  }
+
+  &:has(.item:hover) {
+    animation-play-state: paused;
+    box-shadow: 0 0 60px 12px var(--primary-color) inset,
+      0 0 21px 15px var(--body-color);
+
+    & .item {
+      animation-play-state: paused;
+    }
+
+    &::before {
+      --scale: 4;
+      --translate: calc(-50% / var(--scale));
+
+      border-width: 2px;
+      border-radius: inherit;
+      border-color: var(--secondary-color);
+      transform: scale(var(--scale))
+        translate(var(--translate), var(--translate));
+      box-shadow: 0 0 15px var(--secondary-color),
+        0 0 15px var(--primary-color) inset;
+    }
+
+    &::after {
+      scale: 0.3;
+      border-width: 18px;
+      border-radius: 3rem;
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 var(--size) var(--secondary-color) inset;
+    }
+  }
+}
+
+@keyframes spin-out {
+  from {
+    rotate: 0;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes spin-in {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.title {
+    font-size: 60px;
+    margin-bottom: 20px;
+    font-family: 'Rye', cursive;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.cursor {
+    color: #00e0ff;
+    margin-left: 6px;
+    font-size: 1.4rem;
+    animation: blink 1s step-start infinite;
+    text-shadow: 0 0 8px #00e0ff;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    50.01%, 100% { opacity: 0; }
+}
+
+.language-selection {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 900px;
+  width: 90%;
+  padding: 20px;
+  gap: 30px;
+  background-color: rgb(3, 3, 100);
+  border-radius: 10px;
+  text-align: center;
+  height: 80vh;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.language-selection label {
+  margin-bottom: 60px;
+  font-size: 22px;
+}
+
+@media screen and (max-width: 600px) {
+  .language-icons {
+    --size: 80px;
+    width: calc(var(--size) * 3);
+  }
+
+  .title {
+    font-size: 38px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .main-container {
+    height: auto;
+    padding: 15px;
+  }
+
+  .language-selection label {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+    .language-icons .item:hover img {
+    scale: 1.2 !important; /* reduced scale */
+  }
+}

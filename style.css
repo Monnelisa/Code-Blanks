@@ -8,7 +8,7 @@ html, body {
 body {
     height: 100vh;
     margin: 0;
-    background: linear-gradient(to right, black, #0000FF, #ADD8E6);
+    background: linear-gradient(to right, rgb(21, 3, 102), #0000FF, #5b65f3);
     padding: 10px 20px 10px;
     color: antiquewhite;
     font-family: 'Lora', serif;
@@ -97,21 +97,6 @@ label {
     margin-top: 15px;
 }
 
-.language-icons {
-    margin-top: 20px;
-    margin-bottom: 5px;
-}
-
-.language-icon {
-    display: inline-block;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 3px solid transparent;
-    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-}
-
 .language-icon:hover {
     transform: scale(1.1);
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
@@ -184,18 +169,7 @@ label {
     box-sizing: border-box;
 }
 
-.cursor {
-    color: #00e0ff;
-    margin-left: 6px;
-    font-size: 1.4rem;
-    animation: blink 1s step-start infinite;
-    text-shadow: 0 0 8px #00e0ff;
-}
 
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    50.01%, 100% { opacity: 0; }
-}
 
 #game-footer {
     width: 100%;
