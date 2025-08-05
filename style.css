@@ -8,7 +8,7 @@ html, body {
 body {
     height: 100vh;
     margin: 0;
-    background: linear-gradient(to right, black, #0000FF, #ADD8E6);
+    background: linear-gradient(to right, rgb(21, 3, 102), #0000FF, #5b65f3);
     padding: 10px 20px 10px;
     color: antiquewhite;
     font-family: 'Lora', serif;
