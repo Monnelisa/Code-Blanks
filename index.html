@@ -30,7 +30,7 @@
     </div>
   </div>
     
-    <script>
+  <script>
     // Add click event to language icons
     const languageIcons = document.querySelectorAll('.language-icons img');
     languageIcons.forEach(icon => {
@@ -39,8 +39,18 @@
             const file = `json_files/${language}.json`;
             window.location.href = `gameplay.html?file=${file}&difficulty=easy`;
         });
+    });
+
+    const items = document.querySelectorAll('.language-icons .item');
+    const total = items.length;
+    const angleStep = 360 / total;
+
+    items.forEach((item, i) => {
+      const angle = i * angleStep;
+      item.style.transform = `rotate(${angle}deg) translate(120px) rotate(-${angle}deg)`;
     });    
-    </script>
+   
+  </script>
 
 </body>
 </html>
