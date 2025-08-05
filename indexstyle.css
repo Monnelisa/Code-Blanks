@@ -45,6 +45,7 @@ body {
   margin-top: 10px;
   margin-bottom: 40px;
   aspect-ratio: 1 / 1;
+  overflow: visible;
   pointer-events: none;
   display: inline-grid;
   border-radius: 9999px;
