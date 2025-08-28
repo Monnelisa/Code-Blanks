@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (scorePercentage >= 80) {
         if (currentDifficulty === "hard") {
             victorySound.play();
-            messageElement.innerText = "🎉 You Won the Game! 🎉";
+            messageElement.innerText = "🎉You Won the Game!🎉";
             resultText.innerText = `You got ${correct} out of ${total} correct!`;
             triggerConfetti();
             restartBtn.style.display = "none";      
@@ -37,12 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
             
         } else {
             winSound.play();
-            messageElement.innerText = `✅ Level Passed!`;
+            messageElement.innerText = `✅Level Passed!`;
             resultText.innerText = `You got ${correct} out of ${total} correct! Moving to ${nextDifficulty} level.`;
             nextLevelBtn.style.display = "block";
         }
     } else {
-        messageElement.innerText = "😢 You Did Not Pass!";
+        messageElement.innerText = "😢You Did Not Pass!";
         resultText.innerText = `You only got ${correct} out of ${total} correct. You need at least 80% to move on.`;
     }
 

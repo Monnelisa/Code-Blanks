@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="grid">
 
     <header id="progress-header">
     <span id="current-level-text">🎮 Level: <span id="level-number">1</span></span>
@@ -40,7 +41,8 @@
         const {file} = getQueryParams();  
         const language = file ? file.split('/').pop().split('.')[0] : '';
         const titleElement = document.getElementById('game-title');
-        titleElement.innerHTML = `Let's start your<br><span class="quiz-language">${language.charAt(0).toUpperCase() + language.slice(1)}</span> quiz 🧠`;
+        titleElement.innerHTML = `Let's Start Your<br><span class="quiz-language">${language.toUpperCase()}</span> Quiz`;
     </script>
+</div>
 </body>
 </html>
