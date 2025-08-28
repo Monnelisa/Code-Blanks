@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rye&family=Lora&display=swap');
 
-
 :root {
   --body-color: linear-gradient(to right, rgb(21, 3, 102), #0000FF, #5b65f3);
   --text-color: antiquewhite;
@@ -24,6 +23,10 @@ html {
   height: 100%;
 }
 
+.hidden {
+  display: none !important;
+}
+
 body {
   display: flex;
   overflow: hidden;
@@ -36,178 +39,64 @@ body {
   font-family: 'Lora', serif;
 }
 
-.language-icons {
-  --size: 120px;
-  --offset: 30px;
-  --duration: 30s;
-
-  position: relative;
-  margin-top: 10px;
-  margin-bottom: 40px;
-  aspect-ratio: 1 / 1;
-  pointer-events: none;
-  display: inline-grid;
-  border-radius: 9999px;
-  width: calc(var(--size) * 3);
-  border: 6px solid var(--primary-color);
-  transition: box-shadow 0.3s ease-in-out;
-  animation: spin-out var(--duration) linear infinite;
-
-  & .item {
-    z-index: 1;
-    display: flex;
-    grid-area: 1 / 1;
-    width: var(--size);
-    aspect-ratio: 1 / 1;
-    pointer-events: auto;
-    border-radius: 9999px;
-    animation: spin-in var(--duration) linear infinite reverse;
-    offset: circle(
-        calc(var(--size) / (2 * sin(0.5turn / sibling-count())) + var(--offset))
-      )
-      calc(100% * sibling-index() / sibling-count()) 0deg;
-
-    & img {
-      width: inherit;
-      height: inherit;
-      pointer-events: auto;
-      border-radius: 9999px;
-      border: 3px solid var(--primary-color);
-
-      transition-duration: 0.3s;
-      transition-timing-function: ease-in-out;
-      transition-property: box-shadow, scale, border;
-    }
-
-    &:hover {
-      z-index: 2;
-
-      & img {
-        scale: 1.5;
-        border-color: var(--secondary-color);
-        box-shadow: 0 0 1rem var(--secondary-color);
-      }
-
-      & ~ * img {
-        scale: 0.6;
-      }
-    }
-
-    &:has(~ *:hover) img {
-      scale: 0.6;
-    }
-  }
-
-  &::before {
-    content: "";
-    z-index: -1;
-    border: inherit;
-    position: absolute;
-    width: var(--size);
-    aspect-ratio: 1 / 1;
-    border-radius: 0.25rem;
-
-    inset-block-start: 50%;
-    inset-inline-start: 50%;
-    transform: translate(-50%, -50%);
-
-    transition-duration: 0.3s;
-    transition-timing-function: ease-in-out;
-    transition-property: transform, border-radius, border, box-shadow;
-  }
-
-  &::after {
-    content: "";
-    z-index: -1;
-    inset: -6px;
-    width: inherit;
-    height: inherit;
-    border: inherit;
-    position: absolute;
-    border-radius: inherit;
-    animation: spin-in var(--duration) linear infinite reverse;
-
-    transition-duration: 0.3s;
-    transition-timing-function: ease-in-out;
-    transition-property: scale, border-radius, border, box-shadow;
-  }
-
-  &:has(.item:hover) {
-    animation-play-state: paused;
-    box-shadow: 0 0 60px 12px var(--primary-color) inset,
-      0 0 20px 15px var(--body-color);
-
-    & .item {
-      animation-play-state: paused;
-    }
-
-    &::before {
-      --scale: 2;
-      --translate: calc(-50% / var(--scale));
-
-      border-width: 2px;
-      border-radius: inherit;
-      border-color: var(--secondary-color);
-      transform: scale(var(--scale))
-        translate(var(--translate), var(--translate));
-      box-shadow: 0 0 10px var(--secondary-color),
-        0 0 10px var(--primary-color) inset;
-    }
-
-    &::after {
-      scale: 0.1;
-      border-width: 12px;
-      border-radius: 2rem;
-      border-color: var(--secondary-color);
-      box-shadow: 0 0 var(--size) var(--secondary-color) inset;
-    }
-  }
+/* ---------------- Main Container ---------------- */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* center vertically */
+  height: 100vh; /* full viewport height */
+  width: 100%;
+  padding: 20px;
+  gap: 20px;
+  text-align: center;
+  background: var(--body-color);
 }
 
-@keyframes spin-out {
-  from {
-    rotate: 0;
-  }
-
-  to {
-    rotate: 360deg;
-  }
+/* ---------------- Intro Screen ---------------- */
+#intro-screen {
+  background: rgba(0, 0, 50, 0.8); /* semi-transparent banner */
+  padding: 40px 0px;
+  border-radius: 0px;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
+  width: 100%;
+  animation: fadeIn 2s ease-in-out;
 }
 
-@keyframes spin-in {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
+/* ---------------- Typography ---------------- */
 .title {
-    font-size: 60px;
-    margin-bottom: 20px;
-    font-family: 'Rye', cursive;
-    letter-spacing: 1px;
+  font-size: 80px;
+  margin-bottom: 20px;
+  font-family: 'Rye', cursive;
+  letter-spacing: 1px;
+  color: var(--text-color);
+  text-shadow: 0 0 5px cyan, 0 0 10px #00f7ff;
 }
 
 p {
-    font-size: 25px;
-    margin-top: 10px;
+  font-size: 22px;
+  margin-top: 10px;
+  line-height: 1.4;
+  color: var(--text-color);
 }
 
 .cursor {
-    color: #00e0ff;
-    margin-left: 6px;
-    font-size: 1.4rem;
-    animation: blink 1s step-start infinite;
-    text-shadow: 0 0 8px #00e0ff;
+  color: #00e0ff;
+  margin-left: 6px;
+  font-size: 1.4rem;
+  animation: blink 1s step-start infinite;
+  text-shadow: 0 0 8px #00e0ff;
 }
 
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    50.01%, 100% { opacity: 0; }
+.start-text {
+  font-size: 18px;
+  color: cyan;
+  margin-top: 25px;
+  animation: blink 1s infinite alternate;
 }
+
+/* ---------------- Containers ---------------- */
+.hidden { display: none; }
 
 .language-selection {
   text-align: center;
@@ -216,36 +105,205 @@ p {
   align-items: center;
 }
 
-.main-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  /* max-width: 900px; */
-  /* width: 90%; */
-  padding: 10px;
-  gap: 30px;
-  background-color: rgb(3, 3, 100);
-  border-radius: 10px;
-  text-align: center;
-  height: 90vh;
-  flex-direction: column;
-  align-items: center;
-  /* margin-top: 20px; */
-  /* margin-bottom: 20px; */
-}
-
 .language-selection label {
   margin-bottom: 30px;
   font-size: 22px;
 }
 
+/* ---------------- Mode Menu ---------------- */
+
+#mode-menu label,
+#main-menu label {
+    font-size: 30px;          /* bigger and noticeable */
+    font-weight: bold;        /* stands out */
+    color: #fff;              /* white for contrast */
+    text-shadow: 0 0 2px cyan, 0 0 5px #00f7ff; /* neon glow effect */
+    margin-bottom: 20px;      /* spacing below the label */
+    display: block;           /* ensures proper spacing */
+    text-align: center;       /* center it horizontally */
+}
+#mode-menu {
+  background: rgba(0, 0, 50, 0.85); /* semi-transparent banner */
+  width: 100%; /* full width */
+  padding: 40px 0; /* top/bottom padding only */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Mode buttons container */
+.mode-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Mode buttons */
+.mode-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+  font-size: 22px;
+  padding: 18px 25px;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  width: 80%;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Lora', serif;
+}
+
+.mode-btn small {
+  display: block;
+  font-size: 14px;
+  margin-top: 5px;
+  color: var(--secondary-color);
+}
+
+/* Hover effect */
+.mode-btn:hover {
+  background: rgba(0, 255, 255, 0.15);
+  border-color: var(--secondary-color);
+  color: #fff;
+  box-shadow: 0 0 20px var(--secondary-color);
+}
+
+/* Selected mode */
+.mode-btn.selected {
+  background: rgba(0, 255, 255, 0.25);
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 25px var(--secondary-color);
+  color: #fff;
+}
+
+/* Premium (disabled) button */
+.mode-btn.premium {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------------- Language Icons Banner ---------------- */
+.language-icons-container {
+  background: rgba(0, 0, 50, 0.85); /* semi-transparent banner */
+  width: 100%;                      /* full width */
+  padding: 40px 20px;               /* top/bottom + side padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;                        /* spacing between label and icons */
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
+  animation: fadeIn 1.5s ease-in-out;
+  position: relative;               /* needed if back button is absolute */
+}
+
+/* Label styling like mode menu */
+.language-icons-container label {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 2px cyan, 0 0 5px #00f7ff; /* neon glow effect */
+  margin-bottom: 20px;
+  display: block;
+  text-align: center;
+}
+
+/* Icons inside the banner */
+.language-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  animation: float 4s ease-in-out infinite alternate;
+  padding: 0;
+}
+
+.language-icons .item {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.language-icons .item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+}
+
+.language-icons .item:hover img {
+  transform: scale(1.5);
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 1rem var(--secondary-color);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* Mobile */
 @media screen and (max-width: 600px) {
-  .language-icons {
-    --size: 80px;
-    width: calc(var(--size) * 3);
+  .language-icons .item {
+    width: 80px;
+    height: 80px;
   }
 
+  .language-icons-container {
+    padding: 30px 15px;
+    gap: 20px;
+  }
+}
+
+/* ---------------- Back Button as Emoji ---------------- */
+#back-to-mode {
+  position: absolute;        /* position relative to viewport */
+  top: 20px;                 /* small distance from top */
+  left: 20px;                /* small distance from left */
+  font-size: 32px;           /* visible but not huge */
+  background: none;          /* no background */
+  border: none;              /* no border */
+  color: #00f7ff;            /* neon-ish so it stands out */
+  cursor: pointer;           /* indicate clickable */
+  z-index: 1000;             /* always on top */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hover effect */
+#back-to-mode:hover {
+  transform: scale(1.2);     /* slight zoom on hover */
+  color: cyan;               /* brighten color */
+}
+/* ---------------- Animations ---------------- */
+.container {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ---------------- Mobile ---------------- */
+@media screen and (max-width: 600px) {
   .title {
     font-size: 38px;
   }
@@ -259,11 +317,4 @@ p {
     padding: 15px;
   }
 
-  .language-selection label {
-    font-size: 18px;
-    margin-bottom: 40px;
-  }
-    .language-icons .item:hover img {
-    scale: 1.2 !important; /* reduced scale */
-  }
 }
