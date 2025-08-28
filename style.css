@@ -18,12 +18,14 @@ body {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .container {
     background: rgba(6, 16, 53, 0.7);
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 0px;
     text-align: center;
     width: 90%;
     max-width: 650px;
@@ -42,6 +44,7 @@ body {
     margin-bottom: 20px;
     font-family: 'Rye', cursive;
     letter-spacing: 1px;
+    text-shadow: 0 0 2px cyan, 0 0 5px #00f7ff; /* neon glow effect */
 }
 
 p {
@@ -189,11 +192,11 @@ label {
 /* 📱 Mobile-Specific Adjustments */
 @media (max-width: 600px) {
     .title {
-        font-size: 1.8rem;
+        font-size: 2.7rem;
     }
 
     #guess-input, #guess-button, #restart-btn, #home-btn, #next-level-btn {
-        font-size: 1rem;
+        font-size: rem;
         padding: 10px;
     }
 
@@ -210,7 +213,7 @@ label {
     }
 
     #progress-header, #game-footer {
-        font-size: 0.9rem;
+        font-size: 1rem;
         padding: 10px;
     }
 }
