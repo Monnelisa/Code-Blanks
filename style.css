@@ -192,7 +192,7 @@ label {
 /* 📱 Mobile-Specific Adjustments */
 @media (max-width: 600px) {
     .title {
-        font-size: 2.7rem;
+        font-size: 2rem;
     }
 
     #guess-input, #guess-button, #restart-btn, #home-btn, #next-level-btn {
@@ -203,7 +203,7 @@ label {
     .letter-block {
         width: 30px;
         height: 30px;
-        font-size: 1rem;
+        font-size: 0.5rem;
         line-height: 30px;
     }
 
@@ -213,7 +213,7 @@ label {
     }
 
     #progress-header, #game-footer {
-        font-size: 1rem;
+        font-size: 0.5rem;
         padding: 10px;
     }
 }
