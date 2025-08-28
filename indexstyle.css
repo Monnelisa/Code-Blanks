@@ -191,7 +191,7 @@ p {
 
 /* ---------------- Language Icons Banner ---------------- */
 .language-icons-container {
-  background: rgba(0, 0, 50, 0.85); /* semi-transparent banner */
+  background: rgba(2, 2, 122, 0.85); /* semi-transparent banner */
   width: 100%;                      /* full width */
   padding: 40px 20px;               /* top/bottom + side padding */
   display: flex;
@@ -305,16 +305,16 @@ p {
 /* ---------------- Mobile ---------------- */
 @media screen and (max-width: 600px) {
   .title {
-    font-size: 38px;
+    font-size: 40px;
   }
 
   p {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .main-container {
     height: auto;
-    padding: 15px;
+    padding: 10px;
   }
 
 }
