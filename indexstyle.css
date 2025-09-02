@@ -205,7 +205,7 @@ p {
 
 /* ---------------- Language Icons Banner ---------------- */
 .language-icons-container {
-  background: rgba(3, 36, 152, 0.7); /* semi-transparent banner */
+  background: rgba(3, 30, 126, 0.7); /* semi-transparent banner */
   width: 100%;                      /* full width */
   padding: 40px 20px;               /* top/bottom + side padding */
   display: flex;

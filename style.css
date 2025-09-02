@@ -3,6 +3,7 @@
 
 html, body {
     height: 100%;
+    overflow: hidden;
 }
 
 body {
@@ -15,7 +16,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     box-sizing: border-box;
@@ -62,7 +63,7 @@ body {
 
 .title {
     font-size: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-family: 'Press Start 2P', cursive;
     letter-spacing: 1px;
     text-shadow: 0 0 2px cyan, 0 0 5px #00f7ff; /* neon glow effect */
@@ -84,13 +85,13 @@ label {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 #guess-input {
     width: 85%;
-    padding: 12px;
-    font-size: 18px;
+    padding: 10px;
+    font-size: 15px;
     text-align: center;
     border: 3px solid #0056b3;
     border-radius: 5px;
@@ -100,8 +101,8 @@ label {
 
 #guess-button {
     width: 90%;
-    padding: 12px;
-    font-size: 18px;
+    padding: 10px;
+    font-size: 15px;
     font-weight: bold;
     color: white;
     background-color:#0400ff;
@@ -233,15 +234,15 @@ label {
     }
 
     .letter-block {
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
         line-height: 30px;
     }
 
     .language-icon {
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
     }
 
     #progress-header, #game-footer {
